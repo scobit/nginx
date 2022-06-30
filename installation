@@ -56,9 +56,27 @@ make
 # 
 sudo make install
 
+### настройка nginx в качестве сервиса
+
+## nginx init scripts
+https://www.nginx.com/resources/wiki/start/topics/examples/initscripts/
+
+# копируем код
+vim /etc/init.d/nginx
+
+# добавляем права на исполнение для скрипта
+chmod 744 /etc/init.d/nginx
+or
+chmod +x /etc/init.d/nginx
 
 
-# удаление nginx 
+#
+update-rc.d -f nginx defaults
+
+
+## любые переменнные скрипта запуска можно переопределить в файле /etc/default/nginx
+
+### удаление nginx 
 sudo apt-get remove nginx*
 sudo apt-get purge nginx*
 sudo apt autoremove
