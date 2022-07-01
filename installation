@@ -75,6 +75,11 @@ update-rc.d -f nginx defaults
 
 
 ## любые переменнные скрипта запуска можно переопределить в файле /etc/default/nginx
+# расположение nginx.conf 
+echo "NGINX_CONF_FILE=/etc/nginx/nginx.conf" > /etc/default/nginx
+# расположение исполняемого файла сервиса
+echo "DAEMON=/usr/bin/nginx" >> /etc/default/nginx
+
 
 ### удаление nginx 
 sudo apt-get remove nginx*
